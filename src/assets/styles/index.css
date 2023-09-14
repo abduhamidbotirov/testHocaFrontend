@@ -1,0 +1,464 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: local("Proxima Nova") url("../fonts/Proxima_Nova/proximanova_regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: local("Proxima Nova") url("../fonts/Proxima_Nova/proximanova_bold.otf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: local("Proxima Nova") url("../fonts/Proxima_Nova/proximanova_bold.otf") format("truetype");
+    font-weight: 600;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.active {
+    background: #352483;
+}
+
+.dashboardTitle {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.settings_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    background: whitesmoke;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.settings_main {
+    width: 70%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.profileImg {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+}
+
+.settings_div>div {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.settings_div>div>div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settings_div>div>div h3 {
+    font-size: 20px;
+}
+
+.settings_div>div>div p {
+    font-size: 15px;
+    color: #656464;
+}
+
+#file {
+    visibility: hidden;
+}
+
+#fileLabel {
+    padding: 10px 20px;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+#fileLabel:hover {
+    background: whitesmoke;
+}
+
+.settings_inputs {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.settings_inputs input {
+    width: 50%;
+    padding: 15px 0;
+    border: 1px solid #c4c4c4;
+    padding-left: 15px;
+    font-size: 17px;
+}
+
+.passwordTitle {
+    padding-top: 30px;
+}
+
+.passwordInput {
+    width: 100%;
+    padding: 15px 0;
+    border: 1px solid #c4c4c4;
+    padding-left: 15px;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.submitBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submitBtn {
+    background: #304ffe;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 15px 25px;
+    font-size: 17px;
+}
+
+.ProfileBtn {
+    border: none;
+    background: transparent;
+}
+
+.logOut {
+    position: absolute;
+    background: whitesmoke;
+    padding: 20px 0;
+    top: 47px;
+    right: 24px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.logOut a {
+    text-decoration: none;
+    color: red;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 2px solid red;
+    padding-bottom: 1px;
+}
+
+.logOutOrDiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logOutOrDiv p {
+    color: black;
+}
+
+.logOutOrDiv strong {
+    color: black;
+}
+
+.logOutOrInfo {
+    color: black;
+    font-size: 13px;
+    text-align: center;
+}
+
+.notificationsBox {
+    position: absolute;
+    background: #b0b0b0;
+    padding: 20px;
+    top: 47px;
+    right: 24px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.notificationsTitle {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.notificationsLine {
+    margin-top: 5px;
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
+
+.commentBox {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 85%;
+    max-width: 75%;
+    height: 100%;
+    width: 100%;
+    background: #5c6bc0;
+    top: 85px;
+    z-index: 999;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:960px) {
+    .commentBox {
+        right: 50px !important;
+        top: 80px !important;
+        max-height: 80% !important;
+        max-width: 85% !important;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .commentBox {
+        max-width: 90% !important;
+        right: 30px !important;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .commentBox {
+        max-width: 90% !important;
+        right: 20px !important;
+    }
+}
+
+.commentBox>div {
+    width: 50%;
+    height: 100%;
+}
+
+.commentBox>div:nth-child(1) {
+    background: whitesmoke;
+}
+
+.commentBox>div:nth-child(2) {
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 25px;
+    color: white;
+    background: #636363;
+    padding: 4px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.flex-end {
+    text-align: right !important;
+    justify-content: center !important;
+}
+
+.rightCommentBox h2 {
+    color: white;
+    padding-top: 25px;
+    padding-left: 8px;
+}
+
+.rightCommentBox hr {
+    margin-top: 15px;
+    width: 100%;
+    height: 2px;
+}
+
+.allComments {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.allComments>div {
+    padding-top: 4px;
+}
+
+.oneComment {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.oneComment h4 {
+    color: white;
+}
+
+.commentText {
+    padding-top: 3px;
+    color: white;
+}
+
+@media screen and (max-width:750px) {
+    .commentBox {
+        flex-direction: column !important;
+    }
+
+    .commentBox>div {
+        width: 100%;
+    }
+
+    .cardContent,
+    .cardAction {
+        display: none !important;
+    }
+}
+
+
+
+.shareBox {
+    background: #b0b0b0;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+}
+
+.shareTitle {
+    text-align: center;
+    padding-top: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.shareLine {
+    background: white;
+}
+
+.shareIconsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.shareIconBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.shareIconBtn span {
+    color: white;
+    font-size: 14px;
+}
+
+.clipBoardDiv {
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px 10px;
+    border: 1px solid #d1cfcf;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clipBoardDiv span {
+    color: white;
+    max-width: 360px;
+    overflow: hidden;
+}
+
+.clipBoardDiv button {
+    border: none;
+    background-color: #304ffe;
+    cursor: pointer;
+    padding: 15px 25px;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+    position: fixed;
+    right: 30px;
+}
+
+.rightSideLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.newPostImg {
+    max-height: 150px !important;
+}
